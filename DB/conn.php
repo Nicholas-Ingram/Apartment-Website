@@ -24,6 +24,11 @@
 	{
 		global $conn;
 
+		// We need to make sure that all ' in the strings are replaced with \'
+		$data['Title'] = str_replace("'", "\'", $data['Title']);
+		$data['Body'] = str_replace("'", "\'", $data['Body']);
+		echo $data['Title'] . " " . $data['Body'];
+
 		$sql = "INSERT INTO entries (Date, Title, Body) VALUES ('{$data['Date']}', '{$data['Title']}', '{$data['Body']}')";
 
 		if ($conn->query($sql) === TRUE) {
