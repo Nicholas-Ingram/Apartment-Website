@@ -2,14 +2,6 @@
 	$url = getenv("CLEARDB_DATABASE_URL");
 	$parts = parse_url($url);
 	$parts['path'] = explode("/", $parts['path'])[1];
-
-	// Create connection
-	$conn = new mysqli($parts['host'], $parts['user'], $parts['pass'], $parts['path']);
-	// Check connection
-	if ($conn->connect_error) {
-	    die("Connection failed: " . $conn->connect_error);
-	}
-
 	// add_entry(
 	// 	[
 	// 		"Date" => "2019-05-08",
@@ -22,7 +14,14 @@
 	// And will store it in the database
 	function add_entry($data)
 	{
-		global $conn;
+		global $parts;
+
+		// Create connection
+		$conn = new mysqli($parts['host'], $parts['user'], $parts['pass'], $parts['path']);
+		// Check connection
+		if ($conn->connect_error) {
+		    die("Connection failed: " . $conn->connect_error);
+		}
 
 		// We need to make sure that all ' in the strings are replaced with \'
 		$data['Title'] = str_replace("'", "\'", $data['Title']);
