@@ -2,41 +2,7 @@
 	include('DB/conn.php');
 	//	We need to take the body text from the post data (what is given from mailgun when the schedule email is received)
 	//		and explode it on the line dividers. Then loop through each line and make a new entry for each day.
-	$body = "MAY 2019
-----------------------------------
-SUN    05/05: NOT SCHEDULED
-MON   05/06: 12:00P 05:00P wkc953 | 05:30P 09:20P wkc953
-TUE    05/07: NOT SCHEDULED
-WED   05/08: NOT SCHEDULED
-THU    05/09: 09:30A 12:30P wkc953
-FRI     05/10: NOT SCHEDULED
-SAT    05/11: 08:30A 03:00P wkc953 | 03:30P 09:20P wkc953
-----------------------------------
-SUN    05/12: 10:00A 06:20P wkc953
-MON   05/13: 12:00P 05:00P wkc953 | 06:00P 09:20P wkc953
-TUE    05/14: 06:00P 09:20P wkc953
-WED   05/15: NOT SCHEDULED
-THU    05/16: NOT SCHEDULED
-FRI     05/17: NOT SCHEDULED
-SAT    05/18: 05:00P 09:20P wkc953
-----------------------------------
-SUN    05/19: NOT SCHEDULED
-MON   05/20: 12:00P 05:00P wkc953 | 05:30P 09:20P wkc953
-TUE    05/21: NOT SCHEDULED
-WED   05/22: NOT SCHEDULED
-THU    05/23: 09:30A 12:30P wkc953
-FRI     05/24: NOT SCHEDULED
-SAT    05/25: 08:30A 03:00P wkc953 | 03:30P 09:20P wkc953
-----------------------------------
-SUN    05/26: 10:00A 06:20P wkc953
-MON   05/27: 12:00P 05:00P wkc953 | 06:00P 09:20P wkc953
-TUE    05/28: 06:00P 09:20P wkc953
-WED   05/29: NOT SCHEDULED
-THU    05/30: NOT SCHEDULED
-FRI     05/31: NOT SCHEDULED
-SAT    06/01: 05:00P 09:20P wkc953
----------------------------------- ";
-	$body_parts = explode("----------------------------------", $body);//$_POST['body-plain']);
+	$body_parts = explode("----------------------------------", $_POST['body-plain']);
 	// Now do a for each loop that will go through each part of the body (except the first array position)
 	for($week = 1; $week < count($body_parts); $week++)
 	{
