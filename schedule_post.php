@@ -24,14 +24,14 @@
 				$schedule = [
 					"date" => substr($body_parts[0], -6, -2) . "-" . $date_parts[0] . "-" . $date_parts[1],
 					"start" => substr($body_text, 0, 6),
-					"end" => substr($body_text, -8)
+					"end" => substr($body_text, -9)
 				];
 				//Finally send this data to the database
 				add_entry([
 					"Date" => $schedule['date'],
 					"Title" => "Nick's Work Schedule",
 					"Body" => substr($schedule['start'], 0, -1) . (strpos($schedule['start'], 'A') ? "AM" : "PM") . " to " .
-								substr($schedule['end'], 0, -1) . (strpos($schedule['end'], 'A') ? "AM" : "PM")
+								substr($schedule['end'], 0, -3) . (strpos($schedule['end'], 'A') ? "AM" : "PM")
 				]);
 			}
 		}
