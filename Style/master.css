@@ -1,0 +1,70 @@
+body {
+	background-color: #f0f5f9;
+}
+
+#dayView {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-flow: column;
+}
+
+#dayTitle {
+	margin: auto;
+}
+
+h2 {
+	float: left;
+	text-align: center;
+	color: #2d3436;
+}
+
+.dropdown {
+	float: left;
+	display: inline;
+	margin-left: 15px;
+	margin-top: 3px;
+}
+
+#dropdownMenuButton {
+	background-color: #c9d6df;
+}
+
+#dayBody {
+	width: 100%;
+	flex: 1 1 auto;
+	margin-top: 40px;
+}
+
+.dropdown-menu {
+	padding-top:0;
+	padding-bottom:0;
+}
+
+.owner-header {
+	font-size: 30px;
+	background-color: #52616b;
+	color: #f0f5f9;
+}
+
+
+.owner-entries {
+	background-color: #c9d6df;
+}
+.entries {
+	width: 100%;
+	padding: 20px 30px 20px 30px;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+.entry-container {
+	display: inline-flex;
+}
+
+.entry-card {
+	float: left;
+	display: inline-block;
+	width: 350px;
+	margin: 0px 10px 0px 10px;
+}

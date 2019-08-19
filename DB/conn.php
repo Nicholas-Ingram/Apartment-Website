@@ -2,13 +2,7 @@
 	$url = getenv("CLEARDB_DATABASE_URL");
 	$parts = parse_url($url);
 	$parts['path'] = explode("/", $parts['path'])[1];
-	// add_entry(
-	// 	[
-	// 		"Date" => "2019-05-08",
-	// 		"Title" => "Test Entry",
-	// 		"Body" => "Test Body"
-	// 	]
-	// );
+
 	// This function will require an array that has this information:
 	//	Date, Title, Body
 	// And will store it in the database
@@ -37,5 +31,59 @@
 		}
 
 		$conn->close();
+	}
+
+	function get_distinct($column, $date)
+	{
+		global $parts;
+
+		$date = date('Y-m-d', strtotime($date));
+
+		// Create connection
+		$conn = new mysqli($parts['host'], $parts['user'], $parts['pass'], $parts['path']);
+		// Check connection
+		if ($conn->connect_error) {
+		    die("Connection failed: " . $conn->connect_error);
+		}
+
+		$res = $conn->query("SELECT DISTINCT {$column} FROM entries WHERE Date='{$date}'");
+
+		$owners = array();
+
+		$res->data_seek(0);
+		while ($row = $res->fetch_assoc()) {
+		    array_push($owners, $row['owner']);
+		}
+
+		$conn->close();
+
+		return $owners;
+	}
+
+	function get_entry($owner, $date)
+	{
+		global $parts;
+
+		$date = date('Y-m-d', strtotime($date));
+
+		// Create connection
+		$conn = new mysqli($parts['host'], $parts['user'], $parts['pass'], $parts['path']);
+		// Check connection
+		if ($conn->connect_error) {
+		    die("Connection failed: " . $conn->connect_error);
+		}
+
+		$rows = array();
+
+		$res = $conn->query("SELECT * FROM entries WHERE owner='{$owner}' AND Date='{$date}'");
+		
+		$res->data_seek(0);
+		while ($row = $res->fetch_assoc()) {
+		    array_push($rows, $row);
+		}
+
+		$conn->close();
+
+		return $rows;
 	}
 ?>
