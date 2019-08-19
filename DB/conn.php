@@ -38,6 +38,7 @@
 		global $parts;
 
 		$date = date('Y-m-d', strtotime($date));
+		echo ($date);
 
 		// Create connection
 		$conn = new mysqli($parts['host'], $parts['user'], $parts['pass'], $parts['path']);
@@ -76,7 +77,7 @@
 		$rows = array();
 
 		$res = $conn->query("SELECT * FROM entries WHERE owner='{$owner}' AND Date='{$date}'");
-		
+
 		$res->data_seek(0);
 		while ($row = $res->fetch_assoc()) {
 		    array_push($rows, $row);
