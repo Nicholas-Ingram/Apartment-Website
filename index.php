@@ -10,6 +10,7 @@
 	}
 
 	$owners = get_distinct('owner', $date);
+	var_dump($owners);
 ?>
 
 <!DOCTYPE html>

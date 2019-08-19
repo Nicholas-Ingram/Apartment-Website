@@ -38,9 +38,10 @@
 				//Finally send this data to the database
 				add_entry([
 					"Date" => $schedule['date'],
-					"Title" => "Nick's Work Schedule",
+					"Title" => "Work Schedule",
 					"Body" => substr($schedule['start'], 0, -1) . (strpos($schedule['start'], 'A') ? "AM" : "PM") . " to " .
-								substr($schedule['end'], 0, -3) . (strpos($schedule['end'], 'A') ? "AM" : "PM")
+								substr($schedule['end'], 0, -3) . (strpos($schedule['end'], 'A') ? "AM" : "PM"),
+					"owner" => "Nick"
 				]);
 			}
 		}
