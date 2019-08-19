@@ -76,7 +76,8 @@
 
 		$rows = array();
 
-		$res = $conn->query("SELECT * FROM entries WHERE owner='{$owner}' AND Date='{$date}'");
+		// $res = $conn->query("SELECT * FROM entries WHERE owner='{$owner}' AND Date='{$date}'");
+		$res = $conn->query("SELECT * FROM entries WHERE owner='Nick' AND Date='2019-08-20'");
 
 		$res->data_seek(0);
 		while ($row = $res->fetch_assoc()) {
