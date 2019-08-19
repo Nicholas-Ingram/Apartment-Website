@@ -47,7 +47,7 @@
 		    die("Connection failed: " . $conn->connect_error);
 		}
 
-		$res = $conn->query("SELECT DISTINCT {$column} FROM entries WHERE Date='{$date}'");
+		$res = $conn->query("SELECT DISTINCT owner FROM entries WHERE Date='{$date}'");
 
 		$owners = array();
 
@@ -76,8 +76,7 @@
 
 		$rows = array();
 
-		// $res = $conn->query("SELECT * FROM entries WHERE owner='{$owner}' AND Date='{$date}'");
-		$res = $conn->query("SELECT * FROM entries WHERE owner='Nick' AND Date='2019-08-20'");
+		$res = $conn->query("SELECT * FROM entries WHERE owner='{$owner}' AND Date='{$date}'");
 
 		$res->data_seek(0);
 		while ($row = $res->fetch_assoc()) {
