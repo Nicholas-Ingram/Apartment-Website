@@ -9,7 +9,9 @@
 		$date = date('m/d/y');
 	}
 
+	$owners = array();
 	$owners = get_distinct('owner', $date);
+	array_push($owners, 'Nick');
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +31,10 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
 		$(function() {
+			var isOnDiv = false;
+			$("#datePicker").mouseenter(function(){isOnDiv=true;});
+			$("#datePicker").mouseleave(function(){isOnDiv=false;});
+
 			$("#datepicker").datepicker();
 			$('#datepicker').datepicker().on('changeDate', function(e) {
 				$('#datepicker').change();
@@ -38,7 +44,11 @@
 			});
 
 			$('.dropdown').on('hide.bs.dropdown', function (e) {
-				return false;
+				if (isOnDiv == true) {
+					return false;
+				} else {
+					return true;
+				}
 			});
 		});
 	</script>
