@@ -34,7 +34,8 @@
 				$('#datepicker').change();
 			});
 			$('#datepicker').change(function () {
-				window.location.replace(window.location.hostname + "/index.php?date=" + $('#datepicker').val());
+				document.getElementById("dayTitle").innerHTML = window.location.hostname;
+				//window.location.replace("https://" + window.location.hostname + "/index.php?date=" + $('#datepicker').val());
 			});
 
 			$('.dropdown').on('hide.bs.dropdown', function (e) {
