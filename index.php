@@ -31,10 +31,6 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
 		$(function() {
-			var isOnDiv = false;
-			$("#datePicker").mouseenter(function(){isOnDiv=true;console.log("mouseenter");});
-			$("#datePicker").mouseleave(function(){isOnDiv=false;console.log("mouseleave");});
-
 			$("#datepicker").datepicker();
 			$('#datepicker').datepicker().on('changeDate', function(e) {
 				$('#datepicker').change();
@@ -44,9 +40,13 @@
 			});
 
 			$('.dropdown').on('hide.bs.dropdown', function (e) {
-				if (isOnDiv == true) {
-					return false;
-				} else {
+				var t = $("#edatepicker");
+		        var mouseX = event.clientX + document.body.scrollLeft;
+		        var mouseY = event.clientY + document.body.scrollTop;
+		        if (mouseX >= t.offset().left && mouseX <= t.offset().left + t.width()
+		                && mouseY >= t.offset().top && mouseY <= t.offset().top + t.height()) {
+		            return false;
+		        } else {
 					return true;
 				}
 			});
