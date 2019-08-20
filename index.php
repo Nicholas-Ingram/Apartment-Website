@@ -11,7 +11,7 @@
 
 	$owners = array();
 	$owners = get_distinct('owner', $date);
-	array_push($owners, 'Nick');
+
 ?>
 
 <!DOCTYPE html>
