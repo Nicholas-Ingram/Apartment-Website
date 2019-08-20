@@ -36,7 +36,7 @@
 				$('#datepicker').change();
 			});
 			$('#datepicker').change(function () {
-				window.location.replace("http://localhost/Apartment-Website/index.php?date=" + $('#datepicker').val());
+				window.location.replace(env("REDIRECT_URL") + "/index.php?date=" + $('#datepicker').val());
 			});
 
 			$('.dropdown').on('hide.bs.dropdown', function (e) {
