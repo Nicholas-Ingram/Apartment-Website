@@ -26,7 +26,6 @@
 	<link rel="stylesheet" href="Style/master.css">
 
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<link rel="stylesheet" href="/resources/demos/style.css">
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
@@ -36,7 +35,7 @@
 				$('#datepicker').change();
 			});
 			$('#datepicker').change(function () {
-				window.location.replace(env("REDIRECT_URL") + "/index.php?date=" + $('#datepicker').val());
+				window.location.replace(window.location.hostname + window.location.pathname + "?date=" + $('#datepicker').val());
 			});
 
 			$('.dropdown').on('hide.bs.dropdown', function (e) {
