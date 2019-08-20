@@ -32,8 +32,8 @@
 	<script>
 		$(function() {
 			var isOnDiv = false;
-			$("#datePicker").mouseenter(function(){isOnDiv=true;});
-			$("#datePicker").mouseleave(function(){isOnDiv=false;});
+			$("#datePicker").mouseenter(function(){isOnDiv=true;console.log("mouseenter");});
+			$("#datePicker").mouseleave(function(){isOnDiv=false;console.log("mouseleave");});
 
 			$("#datepicker").datepicker();
 			$('#datepicker').datepicker().on('changeDate', function(e) {
