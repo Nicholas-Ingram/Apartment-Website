@@ -38,7 +38,6 @@
 		global $parts;
 
 		$date = date('Y-m-d', strtotime($date));
-		echo ($date);
 
 		// Create connection
 		$conn = new mysqli($parts['host'], $parts['user'], $parts['pass'], $parts['path']);

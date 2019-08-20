@@ -10,7 +10,6 @@
 	}
 
 	$owners = get_distinct('owner', $date);
-	var_dump($owners);
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +34,7 @@
 				$('#datepicker').change();
 			});
 			$('#datepicker').change(function () {
-				window.location.replace(window.location.hostname + window.location.pathname + "?date=" + $('#datepicker').val());
+				window.location.replace(window.location.hostname + "/index.php?date=" + $('#datepicker').val());
 			});
 
 			$('.dropdown').on('hide.bs.dropdown', function (e) {
