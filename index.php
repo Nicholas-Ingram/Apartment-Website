@@ -40,11 +40,10 @@
 			});
 
 			$('.dropdown').on('hide.bs.dropdown', function (e) {
-				var t = $("#edatepicker");
+				var t = $("#datepicker");
 		        var mouseX = event.clientX + document.body.scrollLeft;
 		        var mouseY = event.clientY + document.body.scrollTop;
-		        if (mouseX >= t.offset().left && mouseX <= t.offset().left + t.width()
-		                && mouseY >= t.offset().top && mouseY <= t.offset().top + t.height()) {
+		        if (mouseX >= t.offset().left && mouseX <= t.offset().left + t.width() && mouseY >= t.offset().top && mouseY <= t.offset().top + t.height()) {
 		            return false;
 		        } else {
 					return true;

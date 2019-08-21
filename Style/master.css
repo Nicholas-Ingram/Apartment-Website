@@ -47,13 +47,13 @@ h2 {
 	color: #f0f5f9;
 }
 
-
 .owner-entries {
 	background-color: #c9d6df;
 }
+
 .entries {
 	width: 100%;
-	padding: 20px 30px 20px 30px;
+	padding: 20px 10px 20px 10px;
 	overflow-x: auto;
 	overflow-y: hidden;
 }
