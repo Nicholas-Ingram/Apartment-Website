@@ -1,3 +1,10 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
 body {
 	background-color: #f0f5f9;
 }
@@ -53,7 +60,7 @@ h2 {
 
 .entries {
 	width: 100%;
-	padding: 20px 15px 20px 15px;
+	padding: 20px 5px 20px 5px;
 	overflow-x: auto;
 	overflow-y: hidden;
 }
@@ -67,5 +74,5 @@ h2 {
 	float: left;
 	display: inline-block;
 	width: 350px;
-	margin: 0px 10px 0px 0px;
+	margin: 0px 5px 0px 0px;
 }
