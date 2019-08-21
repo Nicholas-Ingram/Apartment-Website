@@ -53,18 +53,19 @@ h2 {
 
 .entries {
 	width: 100%;
-	padding: 20px 10px 20px 10px;
+	padding: 20px 30px 20px 30px;
 	overflow-x: auto;
 	overflow-y: hidden;
 }
 
 .entry-container {
 	display: inline-flex;
+	padding: 0;
 }
 
 .entry-card {
 	float: left;
 	display: inline-block;
 	width: 350px;
-	margin: 0px 10px 0px 10px;
+	margin: 0px 0px 0px 10px;
 }
