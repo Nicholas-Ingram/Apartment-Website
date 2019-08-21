@@ -86,6 +86,60 @@
 									</div>
 								</div>
 
+								<div class="card entry-card">
+									<div class="card-header">
+										<?= $rowValue['Title']; ?>
+									</div>
+									<div class="card-body">
+										<h5 class="card-title"><?= $rowValue['Body']; ?></h5>
+									</div>
+								</div>
+
+								<div class="card entry-card">
+									<div class="card-header">
+										<?= $rowValue['Title']; ?>
+									</div>
+									<div class="card-body">
+										<h5 class="card-title"><?= $rowValue['Body']; ?></h5>
+									</div>
+								</div>
+
+								<div class="card entry-card">
+									<div class="card-header">
+										<?= $rowValue['Title']; ?>
+									</div>
+									<div class="card-body">
+										<h5 class="card-title"><?= $rowValue['Body']; ?></h5>
+									</div>
+								</div>
+
+								<div class="card entry-card">
+									<div class="card-header">
+										<?= $rowValue['Title']; ?>
+									</div>
+									<div class="card-body">
+										<h5 class="card-title"><?= $rowValue['Body']; ?></h5>
+									</div>
+								</div>
+
+								<div class="card entry-card">
+									<div class="card-header">
+										<?= $rowValue['Title']; ?>
+									</div>
+									<div class="card-body">
+										<h5 class="card-title"><?= $rowValue['Body']; ?></h5>
+									</div>
+								</div>
+
+								<div class="card entry-card">
+									<div class="card-header">
+										<?= $rowValue['Title']; ?>
+									</div>
+									<div class="card-body">
+										<h5 class="card-title"><?= $rowValue['Body']; ?></h5>
+									</div>
+								</div>
+
 							<?php endforeach; ?>
 						</div>
 					</div>
