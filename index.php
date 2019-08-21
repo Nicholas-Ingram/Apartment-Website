@@ -21,6 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 	<link rel="shortcut icon" type="image/x-icon" href="/Image/favicon.ico">
+	<link rel="apple-touch-icon" href="/Image/apple-touch-icon.png">
     <title></title>
 
 	<!-- Bootstrap CSS -->
