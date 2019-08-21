@@ -20,6 +20,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="shortcut icon" type="image/x-icon" href="/Image/favicon.ico">
     <title></title>
 
 	<!-- Bootstrap CSS -->
@@ -86,60 +87,6 @@
 									</div>
 								</div>
 
-								<div class="card entry-card">
-									<div class="card-header">
-										<?= $rowValue['Title']; ?>
-									</div>
-									<div class="card-body">
-										<h5 class="card-title"><?= $rowValue['Body']; ?></h5>
-									</div>
-								</div>
-
-								<div class="card entry-card">
-									<div class="card-header">
-										<?= $rowValue['Title']; ?>
-									</div>
-									<div class="card-body">
-										<h5 class="card-title"><?= $rowValue['Body']; ?></h5>
-									</div>
-								</div>
-
-								<div class="card entry-card">
-									<div class="card-header">
-										<?= $rowValue['Title']; ?>
-									</div>
-									<div class="card-body">
-										<h5 class="card-title"><?= $rowValue['Body']; ?></h5>
-									</div>
-								</div>
-
-								<div class="card entry-card">
-									<div class="card-header">
-										<?= $rowValue['Title']; ?>
-									</div>
-									<div class="card-body">
-										<h5 class="card-title"><?= $rowValue['Body']; ?></h5>
-									</div>
-								</div>
-
-								<div class="card entry-card">
-									<div class="card-header">
-										<?= $rowValue['Title']; ?>
-									</div>
-									<div class="card-body">
-										<h5 class="card-title"><?= $rowValue['Body']; ?></h5>
-									</div>
-								</div>
-
-								<div class="card entry-card">
-									<div class="card-header">
-										<?= $rowValue['Title']; ?>
-									</div>
-									<div class="card-body">
-										<h5 class="card-title"><?= $rowValue['Body']; ?></h5>
-									</div>
-								</div>
-
 							<?php endforeach; ?>
 						</div>
 					</div>
@@ -149,6 +96,7 @@
 
 		 </section>
     </section>
+	<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"             title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
