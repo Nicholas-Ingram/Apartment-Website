@@ -21,20 +21,23 @@ body {
 }
 
 h2 {
-	float: left;
+	margin-bottom: 20px;
 	text-align: center;
 	color: #2d3436;
 }
 
-.dropdown {
-	float: left;
-	display: inline;
-	margin-left: 15px;
-	margin-top: 3px;
+.btn-group button {
+	background-color: #c9d6df;
+	height: 40px;
 }
 
-#dropdownMenuButton {
-	background-color: #c9d6df;
+ion-icon {
+	font-size: 25px;
+	text-align: center;
+}
+
+.dropdown-toggle::after {
+    display:none;
 }
 
 #dayBody {

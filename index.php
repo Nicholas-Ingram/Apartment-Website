@@ -34,11 +34,37 @@
 	<script>
 		$(function() {
 			$("#datepicker").datepicker();
+			$("#datepicker").click(function() {
+				$("#datepicker").datepicker('show');
+			});
 			$('#datepicker').datepicker().on('changeDate', function(e) {
 				$('#datepicker').change();
 			});
 			$('#datepicker').change(function () {
 				window.location.href = "https://" + window.location.hostname + "/index.php?date=" + $('#datepicker').val();
+			});
+
+			$("datepicker-minus").on('click', function(e) {
+				var date = Date.parse($('#datepicker').val());
+				date.setDate(date.getDate() - 1);
+
+				var month = date.getMonth() + 1;
+				var day = date.getDay();
+				var year = date.getFullYear();
+
+				window.location.href = "https://" + window.location.hostname + "/index.php?date=" + month + "/" + day + "/" + year;
+			});
+
+			$("datepicker-plus").on('click', function(e) {
+				console.log("hello");
+				var date = Date.parse($('#datepicker').val());
+				date.setDate(date.getDate() + 1);
+
+				var month = date.getMonth() + 1;
+				var day = date.getDay();
+				var year = date.getFullYear();
+
+				window.location.href = "https://" + window.location.hostname + "/index.php?date=" + month + "/" + day + "/" + year;
 			});
 
 			$('.dropdown').on('hide.bs.dropdown', function (e) {
@@ -52,18 +78,45 @@
 				}
 			});
 		});
+
+		function updateDate(amount) {
+			console.log("hello world");
+			// var date = Date.parse($('#datepicker').val());
+			var date = new Date('8/21/2019'); //Date.parse('8/21/2019');
+			date.setDate(date.getDate() + amount);
+
+			var month = date.getMonth() + 1;
+			var day = date.getDate();
+			var year = date.getFullYear();
+
+			if (month < 10) {
+				month = "0" + month;
+			}
+
+			if (day < 10) {
+				day = "0" + day;
+			}
+
+			window.location.href = "https://" + window.location.hostname + "/index.php?date=" + month + "/" + day + "/" + year;
+		}
 	</script>
   </head>
   <body>
     <section id="dayView" class="p-4">
     	 <section id="dayTitle">
 
-    	 	<h2 class="ml-5">Entries on: </h2>
-			<div class="dropdown">
-				<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $date; ?></button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					<div id="datepicker"></div>
+    	 	<h2>Entries on</h2>
+			<div class="btn-group" role="group" aria-label="btn group">
+				<button class="btn" type="button" id="datepicker-minus" onclick="updateDate(-1);"><ion-icon name="arrow-dropleft"></ion-icon></button>
+				<div class="btn-group" role="group">
+					<div class="dropdown">
+						<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $date; ?></button>
+						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+							<div id="datepicker"></div>
+						</div>
+					</div>
 				</div>
+				<button class="btn" type="button" id="datepicker-plus" onclick="updateDate(1);"><ion-icon name="arrow-dropright"></ion-icon></button>
 			</div>
 
     	 </section>
@@ -96,13 +149,13 @@
 			<?php endforeach; ?>
 
 		 </section>
+		 <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"             title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
     </section>
-	<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"             title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   </body>
 </html>
