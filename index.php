@@ -32,6 +32,8 @@
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
+		var dateStr = "<?php echo $date ?>";
+
 		$(function() {
 			$("#datepicker").datepicker();
 			$("#datepicker").click(function() {
@@ -41,30 +43,7 @@
 				$('#datepicker').change();
 			});
 			$('#datepicker').change(function () {
-				window.location.href = "https://" + window.location.hostname + "/index.php?date=" + $('#datepicker').val();
-			});
-
-			$("datepicker-minus").on('click', function(e) {
-				var date = Date.parse($('#datepicker').val());
-				date.setDate(date.getDate() - 1);
-
-				var month = date.getMonth() + 1;
-				var day = date.getDay();
-				var year = date.getFullYear();
-
-				window.location.href = "https://" + window.location.hostname + "/index.php?date=" + month + "/" + day + "/" + year;
-			});
-
-			$("datepicker-plus").on('click', function(e) {
-				console.log("hello");
-				var date = Date.parse($('#datepicker').val());
-				date.setDate(date.getDate() + 1);
-
-				var month = date.getMonth() + 1;
-				var day = date.getDay();
-				var year = date.getFullYear();
-
-				window.location.href = "https://" + window.location.hostname + "/index.php?date=" + month + "/" + day + "/" + year;
+				window.location.href = "https://" + window.location.hostname + "/index.php?date=" + dateStr;
 			});
 
 			$('.dropdown').on('hide.bs.dropdown', function (e) {
@@ -80,9 +59,7 @@
 		});
 
 		function updateDate(amount) {
-			console.log("hello world");
-			// var date = Date.parse($('#datepicker').val());
-			var date = new Date('8/21/2019'); //Date.parse('8/21/2019');
+			var date = new Date(dateStr);
 			date.setDate(date.getDate() + amount);
 
 			var month = date.getMonth() + 1;
@@ -107,7 +84,10 @@
 
     	 	<h2>Entries on</h2>
 			<div class="btn-group" role="group" aria-label="btn group">
-				<button class="btn" type="button" id="datepicker-minus" onclick="updateDate(-1);"><ion-icon name="arrow-dropleft"></ion-icon></button>
+				<!-- <button class="btn" type="button" id="datepicker-minus" onclick="updateDate(-1);"><ion-icon name="arrow-dropleft"></ion-icon></button> -->
+				<button class="btn" type="button" id="datepicker-minus" onclick="updateDate(-1);">
+					<div class="btn-cal">-</div>
+				</button>
 				<div class="btn-group" role="group">
 					<div class="dropdown">
 						<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $date; ?></button>
@@ -116,7 +96,9 @@
 						</div>
 					</div>
 				</div>
-				<button class="btn" type="button" id="datepicker-plus" onclick="updateDate(1);"><ion-icon name="arrow-dropright"></ion-icon></button>
+				<button class="btn" type="button" id="datepicker-plus" onclick="updateDate(1);">
+					<div class="btn-cal">+</div>
+				</button>
 			</div>
 
     	 </section>
