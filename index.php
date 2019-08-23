@@ -84,7 +84,6 @@
 
     	 	<h2>Entries on</h2>
 			<div class="btn-group" role="group" aria-label="btn group">
-				<!-- <button class="btn" type="button" id="datepicker-minus" onclick="updateDate(-1);"><ion-icon name="arrow-dropleft"></ion-icon></button> -->
 				<button class="btn" type="button" id="datepicker-minus" onclick="updateDate(-1);">
 					<div class="btn-cal">-</div>
 				</button>
@@ -104,31 +103,40 @@
     	 </section>
 		 <section id="dayBody">
 
-			<?php foreach ($owners as $key => $value): ?>
+			<?php if (count($owners) > 0): ?>
+				<?php foreach ($owners as $key => $value): ?>
 
-				<div class="owner-entries card">
-					<div class="card-header owner-header"><?= $value ?></div>
-					<div class="entries">
-						<div class="entry-container card-body">
+					<div class="owner-entries card">
+						<div class="card-header owner-header"><?= $value ?></div>
+						<div class="entries">
+							<div class="entry-container card-body">
 
-							<?php $rows = get_entry($value, $date);
-							      foreach ($rows as $rowKey => $rowValue) : ?>
+								<?php $rows = get_entry($value, $date);
+								      foreach ($rows as $rowKey => $rowValue) : ?>
 
-								<div class="card entry-card">
-									<div class="card-header">
-										<?= $rowValue['Title']; ?>
+									<div class="card entry-card">
+										<div class="card-header">
+											<?= $rowValue['Title']; ?>
+										</div>
+										<div class="card-body">
+											<h5 class="card-title"><?= $rowValue['Body']; ?></h5>
+										</div>
 									</div>
-									<div class="card-body">
-										<h5 class="card-title"><?= $rowValue['Body']; ?></h5>
-									</div>
-								</div>
 
-							<?php endforeach; ?>
+								<?php endforeach; ?>
+							</div>
 						</div>
 					</div>
+
+				<?php endforeach; ?>
+			<?php else: ?>
+
+				<div class="no-entries">
+					<h3>No entries on <?php echo $date ?></h3>
+					<button class="btn btn-success" type="button">Add Entry</button>
 				</div>
 
-			<?php endforeach; ?>
+			<?php endif; ?>
 
 		 </section>
 		 <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"             title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>

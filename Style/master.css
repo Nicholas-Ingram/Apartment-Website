@@ -26,6 +26,14 @@ h2 {
 	color: #2d3436;
 }
 
+h3 {
+	color: #c9d6df;
+}
+
+.no-entries {
+	margin: auto;
+}
+
 .btn-group button {
 	background-color: #c9d6df;
 	min-height: 40px;
