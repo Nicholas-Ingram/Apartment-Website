@@ -26,12 +26,19 @@ h2 {
 	color: #2d3436;
 }
 
-h3 {
-	color: #c9d6df;
-}
 
 .no-entries {
+	text-align: center;
 	margin: auto;
+}
+
+.no-entries button {
+	background-color: #c9d6df;
+	border-color: #c9d6df;
+}
+
+.no-entries h3 {
+	color: #c9d6df;
 }
 
 .btn-group button {
@@ -52,6 +59,7 @@ h3 {
 }
 
 #dayBody {
+	display: flex;
 	width: 100%;
 	flex: 1 1 auto;
 	margin-top: 40px;

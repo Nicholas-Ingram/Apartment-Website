@@ -133,7 +133,7 @@
 
 				<div class="no-entries">
 					<h3>No entries on <?php echo $date ?></h3>
-					<button class="btn btn-success" type="button">Add Entry</button>
+					<button class="btn" type="button">Add Entry</button>
 				</div>
 
 			<?php endif; ?>
