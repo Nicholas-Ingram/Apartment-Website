@@ -60,10 +60,13 @@ h2 {
 }
 
 #dayBody {
-	/* display: flex; */
 	width: 100%;
 	flex: 1 1 auto;
 	margin-top: 40px;
+}
+
+.dropdown {
+	border-radius: 0;
 }
 
 .dropdown-toggle {
