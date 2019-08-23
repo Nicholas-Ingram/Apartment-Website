@@ -101,7 +101,7 @@
 			</div>
 
     	 </section>
-		 <section id="dayBody">
+		 <section id="dayBody" <?php if (count($owners) <= 0) {echo "style=\"display:flex;\"";} ?>>
 
 			<?php if (count($owners) > 0): ?>
 				<?php foreach ($owners as $key => $value): ?>
