@@ -142,9 +142,10 @@
 									<div class="card entry-card">
 										<div class="card-header">
 											<?= $rowValue['Title']; ?>
+											<button class="btn btn-danger btn-del-entry" value="<?php echo $rowValue['Id']; ?>">Delete Entry</button>
 										</div>
 										<div class="card-body">
-											<h5 class="card-title"><?= $rowValue['Body']; ?></h5>
+											<p class="card-text"><?= $rowValue['Body']; ?></p>
 										</div>
 									</div>
 
