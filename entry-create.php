@@ -8,5 +8,6 @@
     ]);
 
     header("Location:index.php?date=".$_POST['entryDate']);
+	// header("Location: http://localhost/Apartment-Website/index.php?date=".$_POST['entryDate']);
 
  ?>

@@ -1,5 +1,5 @@
 /* Set up some custom properties for easy use later */
-element {
+:root {
 	--main-bg-color: #f0f5f9;
 	--secondary-bg-color: #52616b;
 	--secondary-muted-color: #c9d6df;
@@ -148,6 +148,12 @@ h2 {
 .btn-edit-entry:active {
 	cursor: pointer;
 	color: var(--secondary-muted-color);
+	outline: 0;
+}
+
+.btn-del-entry:focus,
+.btn-edit-entry:focus {
+	outline: 0;
 }
 
 .btn-del-entry:hover,
@@ -178,4 +184,6 @@ h2 {
 	}
 }
 
-@media only screen and (max-height: )
+@media only screen and (max-height: 500px) {
+	
+}

@@ -44,6 +44,7 @@
 			});
 			$('#datepicker').change(function () {
 				window.location.href = "https://" + window.location.hostname + "/index.php?date=" + $("#datepicker").val();
+				// window.location.href = "http://localhost/Apartment-Website/index.php?date=" + $("#datepicker").val();
 			});
 
 			$('.drop-datepicker').on('hide.bs.dropdown', function (e) {
@@ -75,6 +76,7 @@
 			}
 
 			window.location.href = "https://" + window.location.hostname + "/index.php?date=" + month + "/" + day + "/" + year;
+			// window.location.href = "http://localhost/Apartment-Website//index.php?date=" + month + "/" + day + "/" + year;
 		}
 	</script>
   </head>
@@ -106,6 +108,7 @@
 					<button class="btn dropdown-toggle" type="button" id="dropdownAddEntryButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create Entry</button>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownAddEntryButton">
 						<form action="/entry-create.php" method="post" id="entryForm" name="entryForm">
+						<!-- <form action="entry-create.php" method="post" id="entryForm" name="entryForm"> -->
 							<input type="hidden" id="entryDate" value="<?php echo $date; ?>" name="entryDate">
 							<div class="form-group">
 								<label for="entryOwner">Entry Owner</label>
