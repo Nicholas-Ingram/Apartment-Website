@@ -7,7 +7,13 @@
         "owner" => $_POST['entryOwner']
     ]);
 
-    header("Location:index.php?date=".$_POST['entryDate']);
-	// header("Location: http://localhost/Apartment-Website/index.php?date=".$_POST['entryDate']);
+	$onLocalhost = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
+	var_dump($onLocalhost);
+
+	if ($onLocalhost == false) {
+    	header("Location:index.php?date=".$_POST['entryDate']);
+	} else {
+		header("Location: http://localhost/Apartment-Website/index.php?date=".$_POST['entryDate']);
+	}
 
  ?>

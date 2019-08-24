@@ -12,6 +12,8 @@
 	$owners = array();
 	$owners = get_distinct('owner', $date);
 
+	$onLocalhost = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
+
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +35,7 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
 		var dateStr = "<?php echo $date ?>";
+		var onLocalhost = "<?php echo $onLocalhost ?>";
 
 		$(function() {
 			$("#datepicker").datepicker();
@@ -43,8 +46,11 @@
 				$('#datepicker').change();
 			});
 			$('#datepicker').change(function () {
-				window.location.href = "https://" + window.location.hostname + "/index.php?date=" + $("#datepicker").val();
-				// window.location.href = "http://localhost/Apartment-Website/index.php?date=" + $("#datepicker").val();
+				if (onLocalhost == 0) {
+					window.location.href = "https://" + window.location.hostname + "/index.php?date=" + $("#datepicker").val();
+				} else {
+					window.location.href = "http://localhost/Apartment-Website/index.php?date=" + $("#datepicker").val();
+				}
 			});
 
 			$('.drop-datepicker').on('hide.bs.dropdown', function (e) {
@@ -75,8 +81,11 @@
 				day = "0" + day;
 			}
 
-			window.location.href = "https://" + window.location.hostname + "/index.php?date=" + month + "/" + day + "/" + year;
-			// window.location.href = "http://localhost/Apartment-Website//index.php?date=" + month + "/" + day + "/" + year;
+			if (onLocalhost == 0) {
+				window.location.href = "https://" + window.location.hostname + "/index.php?date=" + month + "/" + day + "/" + year;
+			} else {
+				window.location.href = "http://localhost/Apartment-Website//index.php?date=" + month + "/" + day + "/" + year;
+			}
 		}
 	</script>
   </head>
@@ -107,7 +116,7 @@
 				<div class="dropdown drop-add-entry">
 					<button class="btn dropdown-toggle" type="button" id="dropdownAddEntryButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create Entry</button>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownAddEntryButton">
-						<form action="/entry-create.php" method="post" id="entryForm" name="entryForm">
+						<form action="<?php echo $onLocalhost == false ? "/entry-create.php" : "entry-create.php"; ?>" method="post" id="entryForm" name="entryForm">
 						<!-- <form action="entry-create.php" method="post" id="entryForm" name="entryForm"> -->
 							<input type="hidden" id="entryDate" value="<?php echo $date; ?>" name="entryDate">
 							<div class="form-group">
