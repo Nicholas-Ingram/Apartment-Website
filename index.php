@@ -43,10 +43,10 @@
 				$('#datepicker').change();
 			});
 			$('#datepicker').change(function () {
-				window.location.href = "https://" + window.location.hostname + "/index.php?date=" + dateStr;
+				window.location.href = "https://" + window.location.hostname + "/index.php?date=" + $("#datepicker").val();
 			});
 
-			$('.dropdown').on('hide.bs.dropdown', function (e) {
+			$('.drop-datepicker').on('hide.bs.dropdown', function (e) {
 				var t = $("#datepicker");
 		        var mouseX = event.clientX + document.body.scrollLeft;
 		        var mouseY = event.clientY + document.body.scrollTop;
@@ -90,7 +90,7 @@
 						<div class="btn-cal">-</div>
 					</button>
 					<div class="btn-group" role="group">
-						<div class="dropdown">
+						<div class="dropdown drop-datepicker">
 							<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $date; ?></button>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
 								<div id="datepicker"></div>
@@ -103,7 +103,26 @@
 				</div>
 
 				<?php if (count($owners) > 0): ?>
-					<button class="btn btn-add-entry">Add Entry</button>
+					<div class="dropdown">
+						<button class="btn dropdown-toggle drop-add-entry" type="button" id="dropdownAddEntryButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create Entry</button>
+						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownAddEntryButton">
+							<form action="/entry-create" method="post">
+								<div class="form-group">
+									<label for="entryOwner">Entry Owner</label>
+									<input type="text" class="form-control" placeholder="John Doe" id="entryOwner">
+								</div>
+								<div class="form-group">
+									<label for="entryTitle">Entry Title</label>
+									<input type="text" class="form-control" id="entryTitle">
+								</div>
+								<div class="form-group">
+									<label for="entryBody">Entry Body</label>
+									<textarea name="" id="entryBody" cols="30" rows="3" class="form-control"></textarea>
+								</div>
+								<button type="submit" class="btn btn-primary">Add Entry</button>
+							</form>
+						</div>
+					</div>
 				<?php endif; ?>
 			</div>
 

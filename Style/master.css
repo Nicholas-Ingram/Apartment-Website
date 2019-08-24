@@ -43,13 +43,13 @@ h2 {
 }
 
 .btn-group button,
-.btn-add-entry {
+.drop-add-entry {
 	background-color: #c9d6df;
 	min-height: 40px;
 	min-width: 40px;
 }
 
-.btn-add-entry {
+.drop-add-entry {
 	display: block;
 	width: 100%;
 	border-top-left-radius: 0;
@@ -75,12 +75,12 @@ h2 {
 	overflow-y: auto;
 }
 
-.dropdown-toggle {
+.drop-datepicker .dropdown-toggle {
 	height: 100%;
 	border-radius: 0;
 }
 
-.dropdown-menu {
+.drop-datepicker .dropdown-menu {
 	padding-top:0;
 	padding-bottom:0;
 }
