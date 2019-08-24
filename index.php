@@ -107,18 +107,18 @@
 						<button class="btn dropdown-toggle" type="button" id="dropdownAddEntryButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create Entry</button>
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownAddEntryButton">
 							<form action="/entry-create.php" method="post">
-								<input type="hidden" id="entryDate" value="<?php echo $date; ?>">
+								<input type="hidden" id="entryDate" value="<?php echo $date; ?>" name="entryDate">
 								<div class="form-group">
 									<label for="entryOwner">Entry Owner</label>
-									<input type="text" class="form-control" placeholder="John Doe" id="entryOwner">
+									<input type="text" class="form-control" placeholder="John Doe" id="entryOwner" name="entryOwner">
 								</div>
 								<div class="form-group">
 									<label for="entryTitle">Entry Title</label>
-									<input type="text" class="form-control" id="entryTitle">
+									<input type="text" class="form-control" id="entryTitle" name="entryTitle">
 								</div>
 								<div class="form-group">
 									<label for="entryBody">Entry Body</label>
-									<textarea name="" id="entryBody" cols="30" rows="3" class="form-control"></textarea>
+									<textarea name="" id="entryBody" name="entryBody" cols="30" rows="3" class="form-control"></textarea>
 								</div>
 								<button type="submit" class="btn btn-primary">Add Entry</button>
 							</form>
