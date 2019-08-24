@@ -146,3 +146,9 @@ h2 {
 .attribution a {
 	color: #c9d6df;
 }
+
+@media only screen and (max-width: 768px) {
+	.btn-del-entry {
+		color: red;
+	}
+}
