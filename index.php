@@ -118,7 +118,7 @@
 								</div>
 								<div class="form-group">
 									<label for="entryBody">Entry Body</label>
-									<textarea name="" id="entryBody" name="entryBody" form="entryForm" cols="30" rows="3" class="form-control"></textarea>
+									<textarea id="entryBody" name="entryBody" form="entryForm" cols="30" rows="3" class="form-control"></textarea>
 								</div>
 								<button type="submit" class="btn btn-primary">Add Entry</button>
 							</form>
