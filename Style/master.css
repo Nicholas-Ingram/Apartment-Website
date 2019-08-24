@@ -48,6 +48,10 @@ h2 {
 	min-width: 40px;
 }
 
+.btn-add-entry {
+	width: 100%;
+}
+
 .btn-cal {
 	font-weight: 900;
 	font-size: 20px;
@@ -63,14 +67,13 @@ h2 {
 	width: 100%;
 	flex: 1 1 auto;
 	margin-top: 40px;
-}
-
-.dropdown {
-	border-radius: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 .dropdown-toggle {
 	height: 100%;
+	border-radius: 0;
 }
 
 .dropdown-menu {
@@ -105,4 +108,9 @@ h2 {
 	display: inline-block;
 	width: 350px;
 	margin: 0px 5px 0px 0px;
+}
+
+.attribution,
+.attribution a {
+	color: #c9d6df;
 }

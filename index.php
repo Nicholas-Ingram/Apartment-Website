@@ -83,21 +83,25 @@
     	 <section id="dayTitle">
 
     	 	<h2>Entries on</h2>
-			<div class="btn-group" role="group" aria-label="btn group">
-				<button class="btn" type="button" id="datepicker-minus" onclick="updateDate(-1);">
-					<div class="btn-cal">-</div>
-				</button>
-				<div class="btn-group" role="group">
-					<div class="dropdown">
-						<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $date; ?></button>
-						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-							<div id="datepicker"></div>
+
+			<div>
+				<div class="btn-group" role="group" aria-label="btn group">
+					<button class="btn" type="button" id="datepicker-minus" onclick="updateDate(-1);">
+						<div class="btn-cal">-</div>
+					</button>
+					<div class="btn-group" role="group">
+						<div class="dropdown">
+							<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $date; ?></button>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+								<div id="datepicker"></div>
+							</div>
 						</div>
 					</div>
+					<button class="btn" type="button" id="datepicker-plus" onclick="updateDate(1);">
+						<div class="btn-cal">+</div>
+					</button>
 				</div>
-				<button class="btn" type="button" id="datepicker-plus" onclick="updateDate(1);">
-					<div class="btn-cal">+</div>
-				</button>
+				<button class="btn btn-add-entry">Add Entry</button>
 			</div>
 
     	 </section>
@@ -139,7 +143,7 @@
 			<?php endif; ?>
 
 		 </section>
-		 <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"             title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+		 <div class="attribution">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"             title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
     </section>
 
 	<!-- Optional JavaScript -->
