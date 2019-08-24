@@ -1,12 +1,14 @@
 <?php include('DB/conn.php');
 
-    add_entry([
-        "Date" => $_POST['entryDate'],
-        "Title" => $_POST['entryTitle'],
-        "Body" => $_POST['entryBody'],
-        "owner" => $_POST['entryOwner']
-    ]);
+    var_dump($_POST);
 
-    header("Location:index.php?date=".$_POST['entryDate']);
+    // add_entry([
+    //     "Date" => $_POST['entryDate'],
+    //     "Title" => $_POST['entryTitle'],
+    //     "Body" => $_POST['entryBody'],
+    //     "owner" => $_POST['entryOwner']
+    // ]);
+    //
+    // header("Location:index.php?date=".$_POST['entryDate']);
 
  ?>
