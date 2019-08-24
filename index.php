@@ -143,6 +143,7 @@
 										<div class="card-header">
 											<?= $rowValue['Title']; ?>
 											<button class="btn-del-entry" value="<?php echo $rowValue['Id']; ?>"><ion-icon name="trash"></ion-icon></button>
+											<button class="btn-edit-entry" value="<?php echo $rowValue['Id']; ?>"><ion-icon name="create"></ion-icon></button>
 										</div>
 										<div class="card-body">
 											<p class="card-text"><?= $rowValue['Body']; ?></p>

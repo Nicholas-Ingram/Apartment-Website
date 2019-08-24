@@ -1,3 +1,10 @@
+/* Set up some custom properties for easy use later */
+element {
+	--main-bg-color: #f0f5f9;
+	--secondary-bg-color: #52616b;
+	--secondary-muted-color: #c9d6df;
+}
+
 html,
 body {
   height: 100%;
@@ -6,7 +13,7 @@ body {
 }
 
 body {
-	background-color: #f0f5f9;
+	background-color: var(--main-bg-color);
 }
 
 #dayView {
@@ -23,7 +30,6 @@ body {
 h2 {
 	margin-bottom: 20px;
 	text-align: center;
-	color: #2d3436;
 }
 
 .cal-sub {
@@ -40,13 +46,13 @@ h2 {
 }
 
 .no-entries button {
-	background-color: #c9d6df;
-	border-color: #c9d6df;
+	background-color: var(--secondary-muted-color);
+	border-color: var(--secondary-muted-color);
 	color: white;
 }
 
 .no-entries h3 {
-	color: #c9d6df;
+	color: var(--secondary-muted-color);
 }
 
 .drop-add-entry form {
@@ -55,7 +61,7 @@ h2 {
 
 .btn-group button,
 .drop-add-entry .dropdown-toggle {
-	background-color: #c9d6df;
+	background-color: var(--secondary-muted-color);
 	min-height: 40px;
 	min-width: 40px;
 }
@@ -102,12 +108,12 @@ h2 {
 
 .owner-header {
 	font-size: 30px;
-	background-color: #52616b;
-	color: #f0f5f9;
+	background-color: var(--secondary-bg-color);
+	color: var(--main-bg-color);
 }
 
 .owner-entries {
-	background-color: #c9d6df;
+	background-color: var(--secondary-muted-color);
 }
 
 .entries {
@@ -129,26 +135,47 @@ h2 {
 	margin: 0px 5px 0px 0px;
 }
 
-.btn-del-entry {
+.btn-del-entry,
+.btn-edit-entry {
 	float: right;
 	border: 0;
 	background-color: transparent;
-	color: #c9d6df;
+	color: var(--secondary-muted-color);
 	font-size: 20px;
 }
 
-.btn-del-entry:hover {
+.btn-del-entry:active,
+.btn-edit-entry:active {
 	cursor: pointer;
-	color: red;
+	color: var(--secondary-muted-color);
+}
+
+.btn-del-entry:hover,
+.btn-edit-entry:hover {
+	cursor: pointer;
+}
+
+.btn-del-entry:hover {
+	color: #e74c3c;
+}
+
+.btn-edit-entry:hover {
+	color: #2ecc71;
 }
 
 .attribution,
 .attribution a {
-	color: #c9d6df;
+	color: var(--secondary-muted-color);
 }
 
 @media only screen and (max-width: 768px) {
 	.btn-del-entry {
-		color: red;
+		color: #e74c3c;
+	}
+
+	.btn-edit-entry {
+		color: #2ecc71;
 	}
 }
+
+@media only screen and (max-height: )
