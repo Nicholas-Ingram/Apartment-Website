@@ -86,7 +86,7 @@
 
 			<div>
 				<div class="btn-group" role="group" aria-label="btn group">
-					<button class="btn" type="button" onclick="updateDate(-1);" <?php if (count($owners) > 0) {echo 'style="border-bottom-left-radius:0;"';} ?>>
+					<button class="btn cal-sub" type="button" onclick="updateDate(-1);">
 						<div class="btn-cal">-</div>
 					</button>
 					<div class="btn-group" role="group">
@@ -97,34 +97,32 @@
 							</div>
 						</div>
 					</div>
-					<button class="btn" type="button" onclick="updateDate(1);" <?php if (count($owners) > 0) {echo 'style="border-bottom-right-radius:0;"';} ?>>
+					<button class="btn cal-add" type="button" onclick="updateDate(1);">
 						<div class="btn-cal">+</div>
 					</button>
 				</div>
 
-				<?php if (count($owners) > 0): ?>
-					<div class="dropdown drop-add-entry">
-						<button class="btn dropdown-toggle" type="button" id="dropdownAddEntryButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create Entry</button>
-						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownAddEntryButton">
-							<form action="/entry-create.php" method="post" id="entryForm" name="entryForm">
-								<input type="hidden" id="entryDate" value="<?php echo $date; ?>" name="entryDate">
-								<div class="form-group">
-									<label for="entryOwner">Entry Owner</label>
-									<input type="text" class="form-control" placeholder="John Doe" id="entryOwner" name="entryOwner">
-								</div>
-								<div class="form-group">
-									<label for="entryTitle">Entry Title</label>
-									<input type="text" class="form-control" id="entryTitle" name="entryTitle">
-								</div>
-								<div class="form-group">
-									<label for="entryBody">Entry Body</label>
-									<textarea id="entryBody" name="entryBody" form="entryForm" cols="30" rows="3" class="form-control"></textarea>
-								</div>
-								<button type="submit" class="btn btn-primary">Add Entry</button>
-							</form>
-						</div>
+				<div class="dropdown drop-add-entry">
+					<button class="btn dropdown-toggle" type="button" id="dropdownAddEntryButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create Entry</button>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownAddEntryButton">
+						<form action="/entry-create.php" method="post" id="entryForm" name="entryForm">
+							<input type="hidden" id="entryDate" value="<?php echo $date; ?>" name="entryDate">
+							<div class="form-group">
+								<label for="entryOwner">Entry Owner</label>
+								<input type="text" class="form-control" placeholder="John Doe" id="entryOwner" name="entryOwner">
+							</div>
+							<div class="form-group">
+								<label for="entryTitle">Entry Title</label>
+								<input type="text" class="form-control" id="entryTitle" name="entryTitle">
+							</div>
+							<div class="form-group">
+								<label for="entryBody">Entry Body</label>
+								<textarea id="entryBody" name="entryBody" form="entryForm" cols="30" rows="3" class="form-control"></textarea>
+							</div>
+							<button type="submit" class="btn btn-primary">Add Entry</button>
+						</form>
 					</div>
-				<?php endif; ?>
+				</div>
 			</div>
 
     	 </section>
@@ -160,7 +158,6 @@
 
 				<div class="no-entries">
 					<h3>No entries on <?php echo $date ?></h3>
-					<button class="btn" type="button">Add Entry</button>
 				</div>
 
 			<?php endif; ?>

@@ -26,6 +26,14 @@ h2 {
 	color: #2d3436;
 }
 
+.cal-sub {
+	border-bottom-left-radius: 0;
+}
+
+.cal-add {
+	border-bottom-right-radius: 0;
+}
+
 .no-entries {
 	text-align: center;
 	margin: auto;
@@ -52,7 +60,11 @@ h2 {
 	min-width: 40px;
 }
 
-.drop-add-entry button {
+.drop-add-entry form button {
+	width: 100%;
+}
+
+.drop-add-entry .dropdown-toggle {
 	display: block;
 	width: 100%;
 	border-top-left-radius: 0;
