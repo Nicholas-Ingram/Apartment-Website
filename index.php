@@ -142,7 +142,7 @@
 									<div class="card entry-card">
 										<div class="card-header">
 											<?= $rowValue['Title']; ?>
-											<button class="btn btn-danger btn-del-entry" value="<?php echo $rowValue['Id']; ?>">Delete Entry</button>
+											<button class="btn btn-danger btn-del-entry" value="<?php echo $rowValue['Id']; ?>"><ion-icon name="trash"></ion-icon></button>
 										</div>
 										<div class="card-body">
 											<p class="card-text"><?= $rowValue['Body']; ?></p>

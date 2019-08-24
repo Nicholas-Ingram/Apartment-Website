@@ -129,6 +129,10 @@ h2 {
 	margin: 0px 5px 0px 0px;
 }
 
+.btn-del-entry {
+	float: right;
+}
+
 .attribution,
 .attribution a {
 	color: #c9d6df;
