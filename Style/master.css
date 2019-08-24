@@ -25,6 +25,7 @@ body {
 
 #dayTitle {
 	margin: auto;
+	padding-top: 40px;
 }
 
 h2 {
@@ -114,6 +115,7 @@ h2 {
 
 .owner-entries {
 	background-color: var(--secondary-muted-color);
+	margin: 0 40px 40px 40px;
 }
 
 .entries {
@@ -185,5 +187,5 @@ h2 {
 }
 
 @media only screen and (max-height: 500px) {
-	
+
 }

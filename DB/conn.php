@@ -89,4 +89,19 @@
 
 		return $rows;
 	}
+
+	function delete_entry($id) {
+		global $parts;
+
+		// Create connection
+		$conn = new mysqli($parts['host'], $parts['user'], $parts['pass'], $parts['path']);
+		// Check connection
+		if ($conn->connect_error) {
+		    die("Connection failed: " . $conn->connect_error);
+		}
+
+		$conn->query("DELETE FROM entries WHERE ID='($id)'");
+
+		$conn->close();
+	}
 ?>

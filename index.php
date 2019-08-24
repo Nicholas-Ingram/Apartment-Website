@@ -87,10 +87,33 @@
 				window.location.href = "http://localhost/Apartment-Website//index.php?date=" + month + "/" + day + "/" + year;
 			}
 		}
+
+		function deleteEntry(id) {
+			if (confirm("Are you sure you want to delete this entry?")) {
+				var url = "";
+				if (onLocalhost == 0) {
+					url = "https://" + window.location.hostname + "/index.php";
+				} else {
+					url = "http://localhost/Apartment-Website/index.php";
+				}
+
+				var xhr = new XMLHttpRequest();
+				xhr.open("POST", url, true);
+				xhr.setRequestHeader('Content-Type', 'application/json');
+				xhr.send(JSON.stringify({
+				    ID: id,
+					Date: dateStr
+				}));
+			}
+		}
+
+		function editEntry(id) {
+
+		}
 	</script>
   </head>
   <body>
-    <section id="dayView" class="p-4">
+    <section id="dayView">
     	 <section id="dayTitle">
 
     	 	<h2>Entries on</h2>
@@ -117,7 +140,6 @@
 					<button class="btn dropdown-toggle" type="button" id="dropdownAddEntryButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create Entry</button>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownAddEntryButton">
 						<form action="<?php echo $onLocalhost == false ? "/entry-create.php" : "entry-create.php"; ?>" method="post" id="entryForm" name="entryForm">
-						<!-- <form action="entry-create.php" method="post" id="entryForm" name="entryForm"> -->
 							<input type="hidden" id="entryDate" value="<?php echo $date; ?>" name="entryDate">
 							<div class="form-group">
 								<label for="entryOwner">Entry Owner</label>
@@ -154,8 +176,8 @@
 									<div class="card entry-card">
 										<div class="card-header">
 											<?= $rowValue['Title']; ?>
-											<button class="btn-del-entry" value="<?php echo $rowValue['Id']; ?>"><ion-icon name="trash"></ion-icon></button>
-											<button class="btn-edit-entry" value="<?php echo $rowValue['Id']; ?>"><ion-icon name="create"></ion-icon></button>
+											<button class="btn-del-entry" onclick="deleteEntry(<?php echo $rowValue['Id']; ?>)"><ion-icon name="trash"></ion-icon></button>
+											<button class="btn-edit-entry" onclick="editEntry(<?php echo $rowValue['Id']; ?>)"><ion-icon name="create"></ion-icon></button>
 										</div>
 										<div class="card-body">
 											<p class="card-text"><?= $rowValue['Body']; ?></p>
