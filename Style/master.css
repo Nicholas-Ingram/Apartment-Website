@@ -42,8 +42,12 @@ h2 {
 	color: #c9d6df;
 }
 
+.drop-add-entry form {
+	margin: 10px;
+}
+
 .btn-group button,
-.drop-add-entry {
+.drop-add-entry button {
 	background-color: #c9d6df;
 	min-height: 40px;
 	min-width: 40px;

@@ -17,12 +17,15 @@
 		    die("Connection failed: " . $conn->connect_error);
 		}
 
+		// Make sure the date string is in the correct format
+		$data['Date'] = date('Y-m-d', strtotime($data['Date']));
+
 		// We need to make sure that all ' in the strings are replaced with \'
 		$data['Title'] = str_replace("'", "\'", $data['Title']);
 		$data['Body'] = str_replace("'", "\'", $data['Body']);
 		echo $data['Title'] . " " . $data['Body'];
 
-		$sql = "INSERT INTO entries (Date, Title, Body) VALUES ('{$data['Date']}', '{$data['Title']}', '{$data['Body']}')";
+		$sql = "INSERT INTO entries (Date, Title, Body, owner) VALUES ('{$data['Date']}', '{$data['Title']}', '{$data['Body']}', '{$data['owner']}')";
 
 		if ($conn->query($sql) === TRUE) {
 		    echo "New record created successfully";

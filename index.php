@@ -103,10 +103,11 @@
 				</div>
 
 				<?php if (count($owners) > 0): ?>
-					<div class="dropdown">
-						<button class="btn dropdown-toggle drop-add-entry" type="button" id="dropdownAddEntryButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create Entry</button>
+					<div class="dropdown drop-add-entry">
+						<button class="btn dropdown-toggle" type="button" id="dropdownAddEntryButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create Entry</button>
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownAddEntryButton">
 							<form action="/entry-create" method="post">
+								<input type="hidden" id="entryDate" value="<?php echo $date; ?>">
 								<div class="form-group">
 									<label for="entryOwner">Entry Owner</label>
 									<input type="text" class="form-control" placeholder="John Doe" id="entryOwner">
