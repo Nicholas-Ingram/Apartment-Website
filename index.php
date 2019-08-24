@@ -86,7 +86,7 @@
 
 			<div>
 				<div class="btn-group" role="group" aria-label="btn group">
-					<button class="btn" type="button" id="datepicker-minus" onclick="updateDate(-1);">
+					<button class="btn" type="button" onclick="updateDate(-1);" <?php if (count($owners) > 0) {echo 'style="border-bottom-left-radius:0;"';} ?>>
 						<div class="btn-cal">-</div>
 					</button>
 					<div class="btn-group" role="group">
@@ -97,11 +97,14 @@
 							</div>
 						</div>
 					</div>
-					<button class="btn" type="button" id="datepicker-plus" onclick="updateDate(1);">
+					<button class="btn" type="button" onclick="updateDate(1);" <?php if (count($owners) > 0) {echo 'style="border-bottom-right-radius:0;"';} ?>>
 						<div class="btn-cal">+</div>
 					</button>
 				</div>
-				<button class="btn btn-add-entry">Add Entry</button>
+
+				<?php if (count($owners) > 0): ?>
+					<button class="btn btn-add-entry">Add Entry</button>
+				<?php endif; ?>
 			</div>
 
     	 </section>

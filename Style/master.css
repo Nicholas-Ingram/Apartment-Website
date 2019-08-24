@@ -42,14 +42,18 @@ h2 {
 	color: #c9d6df;
 }
 
-.btn-group button {
+.btn-group button,
+.btn-add-entry {
 	background-color: #c9d6df;
 	min-height: 40px;
 	min-width: 40px;
 }
 
 .btn-add-entry {
+	display: block;
 	width: 100%;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 
 .btn-cal {
