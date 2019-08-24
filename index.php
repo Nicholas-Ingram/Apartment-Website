@@ -106,7 +106,7 @@
 					<div class="dropdown drop-add-entry">
 						<button class="btn dropdown-toggle" type="button" id="dropdownAddEntryButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create Entry</button>
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownAddEntryButton">
-							<form action="/entry-create" method="post">
+							<form action="/entry-create.php" method="post">
 								<input type="hidden" id="entryDate" value="<?php echo $date; ?>">
 								<div class="form-group">
 									<label for="entryOwner">Entry Owner</label>

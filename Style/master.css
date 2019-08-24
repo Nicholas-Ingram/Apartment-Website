@@ -26,7 +26,6 @@ h2 {
 	color: #2d3436;
 }
 
-
 .no-entries {
 	text-align: center;
 	margin: auto;
@@ -47,13 +46,13 @@ h2 {
 }
 
 .btn-group button,
-.drop-add-entry button {
+.drop-add-entry .dropdown-toggle {
 	background-color: #c9d6df;
 	min-height: 40px;
 	min-width: 40px;
 }
 
-.drop-add-entry {
+.drop-add-entry button {
 	display: block;
 	width: 100%;
 	border-top-left-radius: 0;
