@@ -27,6 +27,6 @@ form {
     display: flex;
 }
 
-.btn-group button {
+.btn-group>button {
     flex: 1;
 }
