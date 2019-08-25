@@ -137,6 +137,10 @@ h2 {
 	margin: 0px 5px 0px 0px;
 }
 
+.entry-card .card-header {
+	padding: .75em 0 .75em 1.25em;
+}
+
 .btn-del-entry,
 .btn-edit-entry {
 	float: right;
