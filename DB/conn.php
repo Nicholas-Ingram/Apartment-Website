@@ -1,4 +1,8 @@
 <?php
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+
 	$url = getenv("CLEARDB_DATABASE_URL");
 	$parts = parse_url($url);
 	$parts['path'] = explode("/", $parts['path'])[1];

@@ -13,7 +13,6 @@
 	$owners = get_distinct('owner', $date);
 
 	$onLocalhost = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
-	// update comment
 
 ?>
 
