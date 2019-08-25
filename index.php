@@ -97,13 +97,12 @@
 					url = "http://localhost/Apartment-Website/entry-delete.php";
 				}
 
-				var xhr = new XMLHttpRequest();
-				xhr.open("POST", url, true);
-				xhr.setRequestHeader('Content-Type', 'application/json');
-				xhr.send(JSON.stringify({
-				    ID: id,
-					Date: dateStr
-				}));
+				var form = $('<form action="' + url + '" method="post">' +
+				  '<input type="text" name="ID" value="' + id + '" />' +
+				  '<input type="text" name="Date" value="' + dateStr + '" />' +
+				  '</form>');
+				$('body').append(form);
+				form.submit();
 			}
 		}
 
