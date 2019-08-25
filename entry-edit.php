@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label for="entryBody">Entry Body</label>
-                <textarea id="entryBody" name="entryBody" form="entryForm" cols="30" rows="3" class="form-control" value="<?= $entry['Body'] ?>"></textarea>
+                <textarea id="entryBody" name="entryBody" form="entryForm" cols="30" rows="5" class="form-control"><?= $entry['Body'] ?></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Update Entry</button>
             <button type="button" class="btn btn-danger">Cancel</button>

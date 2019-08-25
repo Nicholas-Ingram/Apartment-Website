@@ -5,5 +5,21 @@ html {
 
 body {
     width: 100%;
-    height: 100%;
+    text-align: justify;
+    /* margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+}
+
+.form-group {
+    display: inline-block;
+}
+
+body:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
 }
