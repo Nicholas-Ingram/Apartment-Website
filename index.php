@@ -176,7 +176,29 @@
 										<div class="card-header">
 											<?= $rowValue['Title']; ?>
 											<button class="btn-del-entry" onclick="deleteEntry(<?php echo $rowValue['Id']; ?>);"><ion-icon name="trash"></ion-icon></button>
-											<button class="btn-edit-entry" onclick="editEntry(<?php echo $rowValue['Id']; ?>);"><ion-icon name="create"></ion-icon></button>
+
+											<div class="dropdown drop-edit-entry">
+												<button class="btn-edit-entry dropdown-toggle" id="dropdownEditEntryButton" data-toggle="dropdown"><ion-icon name="create"></ion-icon></button>
+												<div class="dropdown-menu dropdown-menu-right">
+													<form action="<?php echo $onLocalhost == false ? "/entry-delete.php" : "entry-delete.php"; ?>" method="post" id="editForm<?= $rowValue['Id']; ?>" name="editForm<?= $rowValue['Id']; ?>">
+														<input type="hidden" id="editDate<?= $rowValue['Id']; ?>" name="editDate<?= $rowValue['Id']; ?>" value="<?= $rowValue['Date'] ?>">
+														<input type="hidden" id="editID<?= $rowValue['Id']; ?>" name="editID<?= $rowValue['Id']; ?>" value="<?= $rowValue['Id'] ?>">
+														<div class="form-group">
+															<label for="editOwner<?= $rowValue['Id']; ?>">Entry Owner</label>
+															<input type="text" class="form-control" placeholder="John Doe" value="<?= $rowValue['owner']; ?>" id="entryOwner<?= $rowValue['Id']; ?>" name="entryOwner<?= $rowValue['Id']; ?>">
+														</div>
+														<div class="form-group">
+															<label for="editTitle<?= $rowValue['Id']; ?>">Entry Title</label>
+															<input type="text" class="form-control" value="<?= $rowValue['Title']; ?>" id="entryTitle<?= $rowValue['Id']; ?>" name="entryTitle<?= $rowValue['Id']; ?>">
+														</div>
+														<div class="form-group">
+															<label for="editBody<?= $rowValue['Id']; ?>">Entry Body</label>
+															<textarea id="editBody" name="editBody<?= $rowValue['Id']; ?>" form="editForm<?= $rowValue['Id']; ?>" cols="30" rows="3" class="form-control"><?= $rowValue['Body']; ?></textarea>
+														</div>
+														<button type="submit" class="btn btn-primary">Edit Entry</button>
+													</form>
+												</div>
+											</div>
 										</div>
 										<div class="card-body">
 											<p class="card-text"><?= $rowValue['Body']; ?></p>
