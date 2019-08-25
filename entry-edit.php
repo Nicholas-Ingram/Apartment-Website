@@ -2,7 +2,7 @@
 
 	$onLocalhost = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
     $entry = get_entry_from_id($_POST['ID']);
-    $entry[0];
+    $entry = $entry[0];
 
 ?>
 
