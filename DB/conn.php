@@ -97,8 +97,6 @@
 	function get_entry_from_id($id) {
 		global $parts;
 
-		$date = date('Y-m-d', strtotime($date));
-
 		// Create connection
 		$conn = new mysqli($parts['host'], $parts['user'], $parts['pass'], $parts['path']);
 		// Check connection
