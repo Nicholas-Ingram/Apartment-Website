@@ -92,9 +92,9 @@
 			if (confirm("Are you sure you want to delete this entry?")) {
 				var url = "";
 				if (onLocalhost == 0) {
-					url = "https://" + window.location.hostname + "/index.php";
+					url = "https://" + window.location.hostname + "/entry-delete.php";
 				} else {
-					url = "http://localhost/Apartment-Website/index.php";
+					url = "http://localhost/Apartment-Website/entry-delete.php";
 				}
 
 				var xhr = new XMLHttpRequest();
@@ -176,8 +176,8 @@
 									<div class="card entry-card">
 										<div class="card-header">
 											<?= $rowValue['Title']; ?>
-											<button class="btn-del-entry" onclick="deleteEntry(<?php echo $rowValue['Id']; ?>)"><ion-icon name="trash"></ion-icon></button>
-											<button class="btn-edit-entry" onclick="editEntry(<?php echo $rowValue['Id']; ?>)"><ion-icon name="create"></ion-icon></button>
+											<button class="btn-del-entry" onclick="deleteEntry(<?php echo $rowValue['Id']; ?>);"><ion-icon name="trash"></ion-icon></button>
+											<button class="btn-edit-entry" onclick="editEntry(<?php echo $rowValue['Id']; ?>);"><ion-icon name="create"></ion-icon></button>
 										</div>
 										<div class="card-body">
 											<p class="card-text"><?= $rowValue['Body']; ?></p>
