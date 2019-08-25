@@ -69,32 +69,6 @@
 
 	function get_entry($owner, $date)
 	{
-		// global $parts;
-		//
-		// $date = date('Y-m-d', strtotime($date));
-		//
-		// // Create connection
-		// $conn = new mysqli($parts['host'], $parts['user'], $parts['pass'], $parts['path']);
-		// // Check connection
-		// if ($conn->connect_error) {
-		//     die("Connection failed: " . $conn->connect_error);
-		// }
-		//
-		// $rows = array();
-		//
-		// $res = $conn->query("SELECT * FROM entries WHERE owner='{$owner}' AND Date='{$date}'");
-		//
-		// $res->data_seek(0);
-		// while ($row = $res->fetch_assoc()) {
-		//     array_push($rows, $row);
-		// }
-		//
-		// $conn->close();
-		//
-		// return $rows;
-	}
-
-	function get_entry_from_id(id) {
 		global $parts;
 
 		$date = date('Y-m-d', strtotime($date));
@@ -108,7 +82,7 @@
 
 		$rows = array();
 
-		$res = $conn->query("SELECT * FROM entries WHERE ID={$id}");
+		$res = $conn->query("SELECT * FROM entries WHERE owner='{$owner}' AND Date='{$date}'");
 
 		$res->data_seek(0);
 		while ($row = $res->fetch_assoc()) {
@@ -118,6 +92,32 @@
 		$conn->close();
 
 		return $rows;
+	}
+
+	function get_entry_from_id(id) {
+		// global $parts;
+		//
+		// $date = date('Y-m-d', strtotime($date));
+		//
+		// // Create connection
+		// $conn = new mysqli($parts['host'], $parts['user'], $parts['pass'], $parts['path']);
+		// // Check connection
+		// if ($conn->connect_error) {
+		//     die("Connection failed: " . $conn->connect_error);
+		// }
+		//
+		// $rows = array();
+		//
+		// $res = $conn->query("SELECT * FROM entries WHERE ID={$id}");
+		//
+		// $res->data_seek(0);
+		// while ($row = $res->fetch_assoc()) {
+		//     array_push($rows, $row);
+		// }
+		//
+		// $conn->close();
+		//
+		// return $rows;
 	}
 
 	function delete_entry($id) {
