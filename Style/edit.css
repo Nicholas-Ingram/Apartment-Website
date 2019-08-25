@@ -28,5 +28,5 @@ form {
 }
 
 .btn-group>button {
-    flex: 1;
+    flex: 1!important;
 }
