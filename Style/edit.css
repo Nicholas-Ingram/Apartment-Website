@@ -24,4 +24,9 @@ form {
 
 .btn-group {
     width: 100%;
+    display: flex;
+}
+
+.btn-group button {
+    flex: 1;
 }
