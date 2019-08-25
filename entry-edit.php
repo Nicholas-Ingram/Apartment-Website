@@ -37,8 +37,10 @@
                 <label for="entryBody">Entry Body</label>
                 <textarea id="entryBody" name="entryBody" form="entryForm" cols="30" rows="5" class="form-control"><?= $entry['Body'] ?></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Update Entry</button>
-            <button type="button" class="btn btn-danger">Cancel</button>
+            <div class="btn-group" role="group">
+                <button type="submit" class="btn btn-primary">Update Entry</button>
+                <button type="button" class="btn btn-danger">Cancel</button>
+            </div>
         </form>
 
         <!-- Optional JavaScript -->
