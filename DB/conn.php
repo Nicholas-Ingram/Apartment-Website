@@ -132,4 +132,19 @@
 
 		$conn->close();
 	}
+
+	function update_entry(data) {
+		global $parts;
+
+		// Create connection
+		$conn = new mysqli($parts['host'], $parts['user'], $parts['pass'], $parts['path']);
+		// Check connection
+		if ($conn->connect_error) {
+		    die("Connection failed: " . $conn->connect_error);
+		}
+
+		$conn->query("UPDATE entries SET Title={$data['Title']} Body={$data['Body']} owner={$data['owner']} WHERE ID={$data['ID']}");
+
+		$conn->close();
+	}
 ?>
