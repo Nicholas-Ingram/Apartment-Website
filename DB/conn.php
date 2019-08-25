@@ -133,7 +133,7 @@
 		$conn->close();
 	}
 
-	function update_entry(data) {
+	function update_entry($data) {
 		global $parts;
 
 		// Create connection

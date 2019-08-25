@@ -8,7 +8,6 @@
     ]);
 
 	$onLocalhost = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
-	var_dump($onLocalhost);
 
 	if ($onLocalhost == false) {
     	header("Location:index.php?date=".$_POST['entryDate']);
