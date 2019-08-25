@@ -100,7 +100,7 @@
 		    die("Connection failed: " . $conn->connect_error);
 		}
 
-		$conn->query("DELETE FROM entries WHERE ID='($id)'");
+		$conn->query("DELETE FROM entries WHERE ID={$id}");
 
 		$conn->close();
 	}
