@@ -176,7 +176,7 @@
 										<div class="card-header">
 											<?= $rowValue['Title']; ?>
 											<button class="btn-del-entry" onclick="deleteEntry(<?php echo $rowValue['Id']; ?>);"><ion-icon name="trash"></ion-icon></button>
-											<button class="btn-edit-entry dropdown-toggle" id="dropdownEditEntryButton" data-toggle="dropdown"><ion-icon name="create"></ion-icon></button>
+											<button class="btn-edit-entry"><ion-icon name="create"></ion-icon></button>
 										</div>
 										<div class="card-body">
 											<p class="card-text"><?= $rowValue['Body']; ?></p>
