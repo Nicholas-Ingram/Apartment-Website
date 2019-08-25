@@ -5,7 +5,7 @@ html {
 
 body {
     width: 100%;
-    text-align: justify;
+    height: 100%;
     /* margin: 0;
     position: absolute;
     top: 50%;
@@ -14,12 +14,10 @@ body {
     transform: translate(-50%, -50%); */
 }
 
-.form-group {
-    display: inline-block;
-}
-
-body:after {
-    content: '';
-    width: 100%;
-    display: inline-block;
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px;
 }
