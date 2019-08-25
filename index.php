@@ -107,7 +107,19 @@
 		}
 
 		function editEntry(id) {
+			var url = "";
+			if (onLocalhost == 0) {
+				url = "https://" + window.location.hostname + "/entry-edit.php";
+			} else {
+				url = "http://localhost/Apartment-Website/entry-edit.php";
+			}
 
+			var form = $('<form action="' + url + '" method="post">' +
+			  '<input type="text" name="ID" value="' + id + '" />' +
+			  '<input type="text" name="Date" value="' + dateStr + '" />' +
+			  '</form>');
+			$('body').append(form);
+			form.submit();
 		}
 	</script>
   </head>
