@@ -24,6 +24,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 	<link rel="shortcut icon" type="image/x-icon" href="/Image/favicon.ico">
 	<link rel="apple-touch-icon" href="/Image/apple-touch-icon.png">
+	<meta name="apple-mobile-web-app-capable" content="yes">
     <title></title>
 
 	<!-- Bootstrap CSS -->
