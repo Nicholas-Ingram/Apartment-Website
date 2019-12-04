@@ -25,7 +25,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/Image/favicon.ico">
     <link rel="apple-touch-icon" href="/Image/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title></title>
+    <title>Apartment Website</title>
 
 	<!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
